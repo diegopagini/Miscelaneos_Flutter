@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miscelaneos/config/config.dart';
 import 'package:miscelaneos/presentation/providers/app_state_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp]); // This blocks
+  // the screen movement. Will be visible only in portrait
   runApp(const ProviderScope(child: MainApp()));
 }
 

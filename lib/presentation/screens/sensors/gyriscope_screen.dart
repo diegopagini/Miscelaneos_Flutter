@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:miscelaneos/presentation/providers/providers.dart';
 
-class GyroscopeScreen extends StatelessWidget {
+class GyroscopeScreen extends ConsumerWidget {
   const GyroscopeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final gyroscope$ = ref.watch(gyroscopeProvider);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GyroscopeScreen'),
+        title: const Text('Giroscópio'),
       ),
-      body: const Center(child: Text('Hola')),
+      body: Center(
+          child: gyroscope$.when(
+              data: (data) => Text(
+                    data.toString(),
+                    style: const TextStyle(fontSize: 30),
+                  ),
+              error: (error, stackTrace) => Text('$error'),
+              loading: () => const CircularProgressIndicator())),
     );
   }
 }
