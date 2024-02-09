@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miscelaneos/presentation/providers/permissions_provider.dart';
 import 'package:miscelaneos/presentation/providers/sensors/compass_provider.dart';
 import 'package:miscelaneos/presentation/screens/shared/ask_location_screen.dart';
-import 'dart:math' show pi;
 
 class CompassScreen extends ConsumerWidget {
   const CompassScreen({super.key});
