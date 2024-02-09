@@ -11,7 +11,7 @@ class MagnetometerScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MagnetometerScreen'),
+        title: const Text('Magnetometer'),
       ),
       body: Center(
           child: magnetometer$.when(

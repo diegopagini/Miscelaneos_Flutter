@@ -11,7 +11,7 @@ class AccelerometerScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Acelerómetro'),
+        title: const Text('Accelerometer'),
       ),
       body: Center(
           child: accelerometer$.when(

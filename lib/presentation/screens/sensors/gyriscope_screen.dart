@@ -11,7 +11,7 @@ class GyroscopeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Giroscópio'),
+        title: const Text('Gyroscope'),
       ),
       body: Center(
           child: gyroscope$.when(
