@@ -5,3 +5,4 @@ export 'sensors/compass_screen.dart';
 export 'sensors/gyriscope_ball_screen.dart';
 export 'sensors/gyriscope_screen.dart';
 export 'sensors/magnetometer_screen.dart';
+export 'shared/ask_location_screen.dart';
