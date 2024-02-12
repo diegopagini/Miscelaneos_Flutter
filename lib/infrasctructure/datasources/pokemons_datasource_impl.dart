@@ -6,7 +6,7 @@ class PokemonsDatasourceImpl implements PokemonsDatasource {
   final Dio dio;
 
   PokemonsDatasourceImpl()
-      : dio = Dio(BaseOptions(baseUrl: 'https://pokeami.co/api/v2'));
+      : dio = Dio(BaseOptions(baseUrl: 'https://pokeapi.co/api/v2'));
 
   @override
   Future<(Pokemon?, String)> getPokemon(String id) async {
