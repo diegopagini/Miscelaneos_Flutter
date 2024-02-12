@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:miscelaneos/config/config.dart';
 import 'package:miscelaneos/domain/domain.dart';
 import 'package:miscelaneos/presentation/providers/providers.dart';
 
@@ -28,13 +29,23 @@ class _PokemonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(pokemon.name)),
+      appBar: AppBar(
+        title: Text(pokemon.name),
+        actions: [
+          IconButton(
+              onPressed: () {
+                // link == Deeplink
+                SharePlugin.shareLink(pokemon.spriteFront, 'Mira este pókemon');
+              },
+              icon: const Icon(Icons.share_outlined))
+        ],
+      ),
       body: Center(
         child: Image.network(
           pokemon.spriteFront,
           fit: BoxFit.contain,
-          width: 150,
-          height: 150,
+          width: 250,
+          height: 250,
         ),
       ),
     );
@@ -49,6 +60,7 @@ class _ErrorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Text(message),
       ),
