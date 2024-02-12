@@ -37,8 +37,10 @@ final router = GoRouter(routes: [
         GoRoute(
           path: ':id',
           builder: (context, state) {
-            // TODO: deep link
-            return const PokemonsScreen();
+            final id = state.pathParameters['id'] ?? '1';
+            return PokemonScreen(
+              id: id,
+            );
           },
         )
       ]),
