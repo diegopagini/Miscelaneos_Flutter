@@ -8,7 +8,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp]); // This blocks
-  // the screen movement. Will be visible only in portrait
+  // the screen movement. It will be visible only in portrait
   runApp(const ProviderScope(child: MainApp()));
 }
 

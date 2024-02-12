@@ -30,4 +30,16 @@ final router = GoRouter(routes: [
     path: '/compass',
     builder: (context, state) => const CompassScreen(),
   ),
+  GoRoute(
+      path: '/pokemons',
+      builder: (context, state) => const PokemonsScreen(),
+      routes: [
+        GoRoute(
+          path: ':id',
+          builder: (context, state) {
+            // TODO: deep link
+            return const PokemonsScreen();
+          },
+        )
+      ]),
 ]);
