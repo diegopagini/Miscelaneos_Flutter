@@ -8,12 +8,14 @@
 ![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/e2f9b35e-6105-4cf3-b7b4-82b9ac28c396)
 ![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/97309d47-efce-408a-9949-a932734d2b1a)
 
-
-
 To use riverpod_generator
+
 ```
 dart run build_runner watch
 ```
 
+To rename app id
 
-
+```
+flutter pub run change_app_package_name:main com.diegopagini.miscelaneos
+```
