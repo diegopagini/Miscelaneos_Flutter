@@ -22,5 +22,21 @@ final canCheckBiometricsProvider = FutureProvider<bool>.internal(
 );
 
 typedef CanCheckBiometricsRef = FutureProviderRef<bool>;
+String _$localAuthStateHash() => r'4d61344fa08f9facce9aa257bc6f0f9ff2986e1e';
+
+/// See also [LocalAuthState].
+@ProviderFor(LocalAuthState)
+final localAuthStateProvider =
+    NotifierProvider<LocalAuthState, LocalAuthState>.internal(
+  LocalAuthState.new,
+  name: r'localAuthStateProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$localAuthStateHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$LocalAuthState = Notifier<LocalAuthState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

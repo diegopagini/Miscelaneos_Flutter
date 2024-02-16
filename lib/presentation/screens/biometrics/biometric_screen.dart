@@ -8,6 +8,7 @@ class BiometricScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final canCheckBiometris = ref.watch(canCheckBiometricsProvider);
+    final state = ref.watch(localAuthStateProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -30,8 +31,8 @@ class BiometricScreen extends ConsumerWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text(
-            'Estado XXX',
+          Text(
+            'Estado $state',
             style: TextStyle(fontSize: 20),
           )
         ],
