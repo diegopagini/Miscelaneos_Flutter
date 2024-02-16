@@ -1,6 +1,6 @@
 package com.diegopagini.miscelaneos
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity;
 
-class MainActivity: FlutterActivity() {
+public class MainActivity extends FlutterFragmentActivity {
 }
