@@ -19,3 +19,10 @@ To rename app id
 ```
 flutter pub run change_app_package_name:main com.diegopagini.miscelaneos
 ```
+
+sha-256
+
+```
+cd android
+./gradlew signinReport
+```
