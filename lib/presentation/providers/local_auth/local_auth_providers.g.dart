@@ -22,7 +22,7 @@ final canCheckBiometricsProvider = FutureProvider<bool>.internal(
 );
 
 typedef CanCheckBiometricsRef = FutureProviderRef<bool>;
-String _$localAuthStateHash() => r'4d61344fa08f9facce9aa257bc6f0f9ff2986e1e';
+String _$localAuthStateHash() => r'e45c186547ad1b80f143e576abcb3fcbfbff68f6';
 
 /// See also [LocalAuthState].
 @ProviderFor(LocalAuthState)
