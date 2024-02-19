@@ -49,6 +49,7 @@ class LocalAuthState extends _$LocalAuthState {
   @override
   String toString() {
     return ''' 
+    
     didAunthenticate: $didAunthenticate,
     status: $status,
     message: $message,

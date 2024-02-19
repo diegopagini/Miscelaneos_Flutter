@@ -19,7 +19,10 @@ class BiometricScreen extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FilledButton.tonal(
-              onPressed: () {}, child: const Text('Authenticar')),
+              onPressed: () {
+                ref.read(localAuthStateProvider.notifier).authenticateUser();
+              },
+              child: const Text('Authenticar')),
           canCheckBiometris.when(
               data: (canCheck) => Text('Puede revisar biométricos: $canCheck'),
               error: (error, _) => Text('Error: $error'),
@@ -33,7 +36,7 @@ class BiometricScreen extends ConsumerWidget {
           ),
           Text(
             'Estado $state',
-            style: TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 20),
           )
         ],
       )),
