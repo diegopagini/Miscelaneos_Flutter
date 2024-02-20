@@ -29,6 +29,10 @@ class MapController extends _$MapController {
   @override
   MapController build() => MapController();
 
+  Set<Marker> get markersSet {
+    return Set.from(markers);
+  }
+
   MapController copyWith(
           {bool? isReady,
           bool? followUser,
@@ -77,5 +81,23 @@ class MapController extends _$MapController {
 
     final (latitude, longitude) = lastKnowLocation!;
     goToLocation(latitude, longitude);
+  }
+
+  void addMarker(double lat, double lng, [String name = '']) {
+    final newMarker = Marker(
+      markerId: MarkerId('${state.markers.length}'),
+      position: LatLng(lat, lng),
+      infoWindow: InfoWindow(title: name, snippet: 'Por aquí paso el usuario'),
+      onTap: () {},
+    );
+
+    state = state.copyWith(markers: [...state.markers, newMarker]);
+  }
+
+  void addkMarkerCurrentPosition() {
+    if (lastKnowLocation == null) return;
+
+    final (lat, lng) = lastKnowLocation!;
+    addMarker(lat, lng, 'Test');
   }
 }
