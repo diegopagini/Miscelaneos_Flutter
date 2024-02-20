@@ -9,13 +9,13 @@ class ControlledMapScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final watchUserLocation = ref.watch(watchLocationProvider);
+    final userInitialLocation = ref.watch(userLocationProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('ControlledMapScreen'),
       ),
-      body: watchUserLocation.when(
+      body: userInitialLocation.when(
         data: (data) => MapAndControls(latitude: data.$1, longitude: data.$2),
         error: (error, stackTrace) => Text('$error'),
         loading: () => const Center(
@@ -26,7 +26,7 @@ class ControlledMapScreen extends ConsumerWidget {
   }
 }
 
-class MapAndControls extends StatelessWidget {
+class MapAndControls extends ConsumerWidget {
   final double latitude;
   final double longitude;
 
@@ -34,7 +34,9 @@ class MapAndControls extends StatelessWidget {
       {super.key, required this.latitude, required this.longitude});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final mapControllerState = ref.watch(mapControllerProvider);
+
     return Stack(
       children: [
         _MapView(
@@ -53,18 +55,20 @@ class MapAndControls extends StatelessWidget {
             bottom: 40,
             left: 20,
             child: IconButton.filledTonal(
-                onPressed: () {}, icon: const Icon(Icons.location_searching))),
+                onPressed: () {
+                  ref.read(mapControllerProvider.notifier).findUser();
+                },
+                icon: const Icon(Icons.location_searching))),
         Positioned(
             bottom: 90,
             left: 20,
             child: IconButton.filledTonal(
-                onPressed: () {},
-                icon: const Icon(Icons.accessibility_new_outlined))),
-        Positioned(
-            bottom: 90,
-            left: 20,
-            child: IconButton.filledTonal(
-                onPressed: () {}, icon: const Icon(Icons.directions_run))),
+                onPressed: () {
+                  ref.read(mapControllerProvider.notifier).toggleFollowUser();
+                },
+                icon: Icon(mapControllerState.followUser
+                    ? Icons.directions_run
+                    : Icons.accessibility_new_outlined))),
         Positioned(
             bottom: 140,
             left: 20,
@@ -75,17 +79,17 @@ class MapAndControls extends StatelessWidget {
   }
 }
 
-class _MapView extends StatefulWidget {
+class _MapView extends ConsumerStatefulWidget {
   final double initialLat;
   final double initialLng;
 
   const _MapView({required this.initialLat, required this.initialLng});
 
   @override
-  State<_MapView> createState() => __MapViewState();
+  __MapViewState createState() => __MapViewState();
 }
 
-class __MapViewState extends State<_MapView> {
+class __MapViewState extends ConsumerState<_MapView> {
   @override
   Widget build(BuildContext context) {
     return GoogleMap(
@@ -95,7 +99,9 @@ class __MapViewState extends State<_MapView> {
       myLocationEnabled: true,
       zoomControlsEnabled: false,
       myLocationButtonEnabled: false,
-      onMapCreated: (GoogleMapController controller) {},
+      onMapCreated: (GoogleMapController controller) {
+        ref.read(mapControllerProvider.notifier).setMapController(controller);
+      },
     );
   }
 }
