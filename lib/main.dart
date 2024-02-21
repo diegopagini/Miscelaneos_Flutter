@@ -6,6 +6,9 @@ import 'package:miscelaneos/presentation/providers/app_state_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  QuickActionsPlugin.registerActions();
+
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp]); // This blocks
   // the screen movement. It will be visible only in portrait
