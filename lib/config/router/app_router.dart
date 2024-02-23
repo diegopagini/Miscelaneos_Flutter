@@ -63,5 +63,13 @@ final router = GoRouter(routes: [
   GoRoute(
     path: '/controlled-map',
     builder: (context, state) => const ControlledMapScreen(),
+  ),
+  GoRoute(
+    path: '/ad-fullscreen',
+    builder: (context, state) => const AdFullScreen(),
+  ),
+  GoRoute(
+    path: '/ad-rewarded',
+    builder: (context, state) => const AdRewardedScreen(),
   )
 ]);

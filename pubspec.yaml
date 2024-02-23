@@ -19,6 +19,7 @@ dependencies:
   go_router: ^13.1.0
   google_fonts: ^6.1.0
   google_maps_flutter: ^2.5.3
+  google_mobile_ads: ^4.0.0
   local_auth: ^2.1.8
   permission_handler: ^11.2.0
   quick_actions: ^1.0.7
