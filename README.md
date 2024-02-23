@@ -9,6 +9,8 @@
 ![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/f6b3907c-127a-4621-9310-adb0806072d1)
 ![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/e2f9b35e-6105-4cf3-b7b4-82b9ac28c396)
 ![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/97309d47-efce-408a-9949-a932734d2b1a)
+![image](https://github.com/diegopagini/Miscelaneos_Flutter/assets/62857778/d564f458-55a8-453a-9fcf-78658c4397e6)
+
 
 To use riverpod_generator
 
