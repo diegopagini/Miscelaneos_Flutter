@@ -7,6 +7,10 @@ final router = GoRouter(routes: [
     builder: (context, state) => const HomeScreen(),
   ),
   GoRoute(
+    path: '/badge',
+    builder: (context, state) => const BadgeScreen(),
+  ),
+  GoRoute(
     path: '/permissions',
     builder: (context, state) => const PermissionsScreen(),
   ),

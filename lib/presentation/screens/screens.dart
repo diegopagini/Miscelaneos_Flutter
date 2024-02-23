@@ -1,3 +1,4 @@
+export 'bagde/badge_screen.dart';
 export 'biometrics/biometric_screen.dart';
 export 'home/home_screen.dart';
 export 'location/controller_map_screen.dart';

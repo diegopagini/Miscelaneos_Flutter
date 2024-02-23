@@ -29,6 +29,7 @@ final menuItems = <MenuItem>[
       title: 'Controlado',
       icon: Icons.gamepad_outlined,
       route: '/controlled-map'),
+  MenuItem(title: 'Badge', icon: Icons.notification_important, route: '/badge'),
 ];
 
 class MainMenu extends StatelessWidget {
