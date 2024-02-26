@@ -21,5 +21,23 @@ final adBannerProviderProvider = AutoDisposeFutureProvider<BannerAd>.internal(
 );
 
 typedef AdBannerProviderRef = AutoDisposeFutureProviderRef<BannerAd>;
+String _$adInterstitialProviderHash() =>
+    r'f7dc0fe90302f75cefe9919669cf640f80d46c9b';
+
+/// See also [adInterstitialProvider].
+@ProviderFor(adInterstitialProvider)
+final adInterstitialProviderProvider =
+    AutoDisposeFutureProvider<InterstitialAd>.internal(
+  adInterstitialProvider,
+  name: r'adInterstitialProviderProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$adInterstitialProviderHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef AdInterstitialProviderRef
+    = AutoDisposeFutureProviderRef<InterstitialAd>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -9,3 +9,10 @@ Future<BannerAd> adBannerProvider(AdBannerProviderRef ref) async {
   final ad = await AdmodPlugin.loadBannerAd();
   return ad;
 }
+
+@riverpod
+Future<InterstitialAd> adInterstitialProvider(
+    AdInterstitialProviderRef ref) async {
+  final ad = await AdmodPlugin.loadInterestialAd();
+  return ad;
+}

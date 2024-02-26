@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:miscelaneos/presentation/providers/ads/admod_providers.dart';
 
-class AdFullScreen extends StatelessWidget {
+class AdFullScreen extends ConsumerWidget {
   const AdFullScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final interstitialAdAsync = ref.watch(adInterstitialProviderProvider);
+
+    if (interstitialAdAsync.isLoading) {
+      return const Scaffold(body: Center(child: Text('Loading...')));
+    }
+
+    if (interstitialAdAsync.hasValue) {
+      interstitialAdAsync.value!.show();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ad Full Scren'),
