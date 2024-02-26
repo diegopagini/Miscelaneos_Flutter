@@ -7,6 +7,7 @@ export 'location/controller_map_screen.dart';
 export 'location/location_screen.dart';
 export 'location/map_screen.dart';
 export 'permissions/permissions_screen.dart';
+export 'pokemons/db_pokemons_screen.dart';
 export 'pokemons/pokemon_screen.dart';
 export 'pokemons/pokemons_screen.dart';
 export 'sensors/accelerometer_screen.dart';

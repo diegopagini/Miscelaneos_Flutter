@@ -22,6 +22,10 @@ final menuItems = <MenuItem>[
       route: '/gyroscope-ball'),
   MenuItem(title: 'Brújula', icon: Icons.explore, route: '/compass'),
   MenuItem(title: 'Pokemons', icon: Icons.catching_pokemon, route: '/pokemons'),
+  MenuItem(
+      title: 'Background Process',
+      icon: Icons.storage_rounded,
+      route: '/db-pokemons'),
   MenuItem(title: 'Biométricos', icon: Icons.fingerprint, route: '/biometrics'),
   MenuItem(title: 'Ubicación', icon: Icons.pin_drop, route: '/location'),
   MenuItem(title: 'Mapas', icon: Icons.map_outlined, route: '/maps'),
