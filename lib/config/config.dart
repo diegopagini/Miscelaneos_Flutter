@@ -6,3 +6,4 @@ export 'plugins/share_plugin.dart';
 export 'plugins/share_preferences_plugin.dart';
 export 'router/app_router.dart';
 export 'theme/app_theme.dart';
+export 'workmanager/callback_dispatcher.dart';
