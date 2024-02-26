@@ -16,3 +16,9 @@ Future<InterstitialAd> adInterstitialProvider(
   final ad = await AdmodPlugin.loadInterestialAd();
   return ad;
 }
+
+@riverpod
+Future<RewardedAd> adRewardedProvider(AdRewardedProviderRef ref) async {
+  final ad = await AdmodPlugin.loadRewardedAd();
+  return ad;
+}

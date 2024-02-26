@@ -1,3 +1,4 @@
+export 'ads/admod_points_provider.dart';
 export 'ads/admod_providers.dart';
 export 'app_state_provider.dart';
 export 'badge/badge_counter_provider.dart';
