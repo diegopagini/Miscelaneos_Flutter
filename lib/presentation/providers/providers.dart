@@ -13,3 +13,4 @@ export 'sensors/accelerometer_providers.dart';
 export 'sensors/compass_provider.dart';
 export 'sensors/gyroscope_provider.dart';
 export 'sensors/magnetometer_provider.dart';
+export 'shared_preferences/shared_preferences_provider.dart';

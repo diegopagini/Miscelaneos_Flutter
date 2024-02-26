@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:miscelaneos/presentation/providers/permissions_provider.dart';
+import 'package:miscelaneos/presentation/providers/providers.dart';
 
 class PermissionsScreen extends StatelessWidget {
   const PermissionsScreen({super.key});
@@ -23,6 +23,7 @@ class _PermissionsView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final permissionsState = ref.watch(permissionsStateProvider);
     final notifier = ref.watch(permissionsStateProvider.notifier);
+    final showAds = ref.watch(sharedPreferencesProvider);
 
     return ListView(
       children: [
@@ -73,6 +74,14 @@ class _PermissionsView extends ConsumerWidget {
           },
           title: const Text('Location When In Use'),
           subtitle: Text('${permissionsState.locationWhenInUse}'),
+        ),
+        CheckboxListTile(
+          value: showAds,
+          onChanged: (_) {
+            ref.read(sharedPreferencesProvider.notifier).toggleAds();
+          },
+          title: const Text('Show Ads'),
+          subtitle: const Text('This option shows or hide the ads'),
         ),
       ],
     );

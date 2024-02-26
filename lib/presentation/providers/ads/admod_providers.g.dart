@@ -6,7 +6,7 @@ part of 'admod_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$adBannerProviderHash() => r'5fd7a4b17f79e092cc5f4bca04e7905440442f25';
+String _$adBannerProviderHash() => r'95f3e76637dbcba5e2710b51f64185c07e255da1';
 
 /// See also [adBannerProvider].
 @ProviderFor(adBannerProvider)
@@ -22,7 +22,7 @@ final adBannerProviderProvider = AutoDisposeFutureProvider<BannerAd>.internal(
 
 typedef AdBannerProviderRef = AutoDisposeFutureProviderRef<BannerAd>;
 String _$adInterstitialProviderHash() =>
-    r'f7dc0fe90302f75cefe9919669cf640f80d46c9b';
+    r'5262268a0097b1043856afb1f911e59ed66dba1d';
 
 /// See also [adInterstitialProvider].
 @ProviderFor(adInterstitialProvider)
@@ -40,7 +40,7 @@ final adInterstitialProviderProvider =
 typedef AdInterstitialProviderRef
     = AutoDisposeFutureProviderRef<InterstitialAd>;
 String _$adRewardedProviderHash() =>
-    r'f17b1e88913c12e5479156de9b738e9a131dc0ff';
+    r'7531c06367a8b4c4c37cdd0dc451da5b4fee87aa';
 
 /// See also [adRewardedProvider].
 @ProviderFor(adRewardedProvider)
