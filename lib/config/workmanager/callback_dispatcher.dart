@@ -15,11 +15,12 @@ void callbackDispatcher() {
         break;
 
       case fetchPeriodicBagrkoundTaskKey:
-        print('fetchPeriodicBagrkoundTaskKey');
+        await loadNextPokemon();
+
         break;
 
       case Workmanager.iOSBackgroundTask: // FOR IOS
-        print('Workmanager.iOSBackgroundTask');
+        await loadNextPokemon();
         break;
     }
 
