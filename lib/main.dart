@@ -12,7 +12,7 @@ void main() async {
 
   QuickActionsPlugin.registerActions();
 
-  Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
+  Workmanager().initialize(callbackDispatcher, isInDebugMode: false);
 
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp]); // This blocks

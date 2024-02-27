@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miscelaneos/config/workmanager/callback_dispatcher.dart';
 import 'package:miscelaneos/domain/domain.dart';
+import 'package:miscelaneos/presentation/providers/providers.dart';
 import 'package:workmanager/workmanager.dart';
 
-class DbPokemonsScreen extends StatelessWidget {
+class DbPokemonsScreen extends ConsumerWidget {
   const DbPokemonsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final pokemonsAsync = ref.watch(pokemonDbProvider);
+
+    if (pokemonsAsync.isLoading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    final List<Pokemon> pokemons = pokemonsAsync.value ?? [];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Background Process'),
@@ -22,8 +36,8 @@ class DbPokemonsScreen extends StatelessWidget {
               icon: const Icon(Icons.add_alarm_sharp))
         ],
       ),
-      body: const CustomScrollView(
-        slivers: [_PokemonsGrid(pokemons: [])],
+      body: CustomScrollView(
+        slivers: [_PokemonsGrid(pokemons: pokemons)],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},

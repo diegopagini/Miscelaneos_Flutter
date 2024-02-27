@@ -7,6 +7,7 @@ export 'location/map_controller_provider.dart';
 export 'location/user_location_provider.dart';
 export 'location/watch_location_provider.dart';
 export 'permissions_provider.dart';
+export 'pokemons/pokemon_db_provider.dart';
 export 'pokemons/pokemon_list_provider.dart';
 export 'pokemons/pokemon_provider.dart';
 export 'sensors/accelerometer_providers.dart';
